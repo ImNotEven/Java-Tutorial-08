@@ -1,0 +1,142 @@
+package TutorialPackage;
+
+import java.util.Scanner;
+
+public class Tutorial_08 {
+    
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        
+        // \n is an "escape sequence". It's a manual way to start a new line
+        // To put quotes in our text we can preceed a double quote with a \
+        // this tells Java that we just want the character " , not to start a 
+        // new String or section of text.
+        
+        
+        // setting up our text to look nice
+        String storyIntro = 
+        "     Your vision grows blurry and you realize you've been \n"
+      + "staring into your computer screen just a little too long. \n"
+      + "Your eyes dart over to the digital clock of the monitor \n"
+      + "instinctively as you remember that text adventure program \n"
+      + "have to write for that Comp Sci midterm due at midnight. \n\n" 
+      + "  -   \"Damn... It's eleven p.m. I just have to pick the \n"
+      + "       first topic that comes to my mind. Come on Brain... \n"
+      + "       help me out here. I need a topic. Something good. \n"
+      + "       What's it going to be Brain?\" \n"
+      + "  -   I don't know, how about ... ";
+        
+        
+        
+        
+        // time to obtain input
+        System.out.print(storyIntro);
+        String storyTopic = input.nextLine();
+        
+        
+        
+        String theBeginning = 
+                "\n  -   \"I don't know how I didn't think of it before! \n"
+                + "      Thanks Brain! I'll write about ";
+        
+        // Add in the users chosen storyTopic
+        System.out.println(theBeginning + storyTopic + ".");
+        
+        
+        
+        
+        
+        
+        String wittyRemark = 
+                "      Ha! And Mrs. Microtoshinux said I wouldn't be able \n"
+              + "      To write this in one day! Well not if I kick into \n"
+              + "      maximum overdrive! \n";
+        
+        
+        String randomThoughts = 
+                "      Time to get started with my rough draft. Alright.\n"
+              + "      What I learned in Boating School is...\n"
+              + "      No no no, that doesn't sound right at all. Lets \n"
+              + "      really set the stage here.\"\n\n";
+        
+        
+        String story = "The year was 1855 and Mr ...\n\n"
+                + "  -   \"Dang! Right when we were getting going! Alright Brain. \n"
+                + "       I'm asking for your help again, so wake up! What should \n"
+                + "       This Mr be named?\" \n"
+                + "  -   Do I really have to do everything? Alright, how about Mr ... ";
+        
+                
+        System.out.print(wittyRemark + randomThoughts + story);
+        
+        // more input
+        String mrName = input.nextLine();
+        
+        
+        
+        
+        String justGettingStarted = 
+                "\nYou snap your fingers in delight! A little too hard... \n\n"
+              + "  -   \"Ouch! Well good job anyways Brain. So where were we? \n"
+              + "       Oh that's right! \n \n";
+        
+        String storyUpdated = 
+                ("     The year was 1855 and Mr. " + mrName + " had just invented \n"
+               + storyTopic + ". It had the potential to be the greatest discovery \n"
+               + "since those get-rich-quickers found gold literally buried \n"
+               + "in California. Mr. " + mrName + " had a feeling that gravy train would \n"
+               + "soon end. Abruptly. Almost like a rushed midterm assignment. \n"
+               + "And then it did.\n"
+               + "The End");
+        
+        String snarkyComment = 
+                "\n\n  -   \"It's perfect! What do you think Brain? \n"
+                  + "       Sound good? Just a yes or no should suffice.\" \n"
+                  + "  -   Uhhh, I'm feeling a strong ... ";
+        
+        
+        
+        System.out.print(justGettingStarted + storyUpdated + snarkyComment);
+        
+        String finalWords = input.nextLine();
+        
+        if (finalWords.equalsIgnoreCase("yes")) {
+            System.out.println("\n  -   \"Thank God you agree!\n"
+                    + "       I already submitted it while you were thinking about it.\" ");
+        }
+        else {
+            System.out.println("\n  -   \"Well, it's your handywork!\n"
+                    + "       I'll submit it anyway. I think it's perfect!");
+        }
+        
+        
+        
+        
+        boolean notBedTime = true;
+        int hour = 11;
+        int minute = 50;
+        
+        while (notBedTime) {
+            System.out.print("\n\n  -   It's " + hour + ":" + minute + ". \n "
+                    + "        Should I go to bed? \n"
+                    + "  -   ... ");
+            if (input.nextLine().equalsIgnoreCase("yes")) {
+                System.out.println("You're right Brain. Good night!");
+                notBedTime = false;
+            }
+            else {
+                System.out.println("Okay.. I'll wait here for a minute.\n");
+                minute = minute + 1;
+                if (minute == 60) {
+                    hour = hour + 1;
+                    minute = 0;
+                    if (hour == 13) {
+                        hour = 1;
+                    }
+                }
+            }
+        }
+
+    }
+}
